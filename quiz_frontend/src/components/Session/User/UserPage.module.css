@@ -1,0 +1,234 @@
+.page_wrapper{
+    display: flex;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+.page_container{
+    width: 80%;
+    height: 70%;
+    background-color: rgba(0,0,0,.1);
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+    "info statics"
+    "settings statics";
+    grid-template-rows: 7fr 3fr;
+    grid-template-columns: 3fr 7fr;
+}
+.profile_info,
+.profile_settings{
+    border-right: 5px solid rgba(0,0,0, 1);
+    background-color: rgba(15,15,15,.6);
+}
+.profile_info{
+    grid-area: info;
+    border-bottom: 5px solid rgba(0,0,0, 1);
+    display: grid;
+    padding: 20px;
+    gap: 20px;
+    grid-template-rows: auto auto auto;
+    border-radius: 5px;
+}
+.image_container{
+    margin: auto;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: pink;
+    overflow-y: hidden;
+}
+.image_container img{
+    height: 100%;
+}
+.image_container .camera{
+    position: relative;
+    top: -75%;
+    left: 30%;
+    font-size: 30px;
+    color: #ccc;
+    display: none;
+}
+.image_container:hover{
+    border: 2px solid #ccc;
+}
+.image_container:hover .camera{
+    display: block;
+}
+.profile_text_container{
+    display: grid;
+    gap:20px;
+    grid-template-rows: 1fr 1fr;
+    padding: 15px 0;
+}
+.profile_text{
+    margin: auto;
+    font-size: 13px;
+    color: #ccc;
+}
+.profile_text button{
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+}
+.profile_text button:hover{
+    color:#fff;
+}
+.panels_container{
+    display: grid;
+    grid-template-areas:
+            "total total"
+            "won lose";
+    gap: 10px;
+}
+.total_panel{
+    grid-area: total;
+}
+.won_panel{
+    grid-area: won;
+}
+.lose_panel{
+    grid-area: lose;
+}
+.panel{
+    padding: 5px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(56,56,56,.5);
+}
+.panel .title{
+    margin: auto auto 10px auto;
+    font-size: 11px;
+    color: #ccc;
+}
+.panel .inner{
+    margin: auto;
+}
+.name{
+    font-size: 20px;
+    color:#fff;
+}
+.profile_settings{
+    grid-area: settings;
+    display: grid;
+    padding-top: 20px;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 10px;
+    width: 100%;
+    padding-left: 20px;
+    margin: 0 auto;
+    letter-spacing: .07rem;
+}
+.profile_settings .button{
+    font-size: 18px;
+    color: #ccc;
+    cursor: pointer;
+}
+.profile_settings .button .text{
+    margin-left: 10px;
+}
+.profile_settings .button:hover{
+    color: #fff;
+}
+.image_container{
+}
+.statics_container{
+    grid-area: statics;
+    background-color: rgba(0,0,0,.7);
+    display: grid;
+    grid-template-rows: 70px 1fr;
+}
+
+.rating{
+    display: grid;
+    grid-template-columns: auto 1fr 100px;
+}
+.rank{
+    width: 60px;
+    margin: auto auto auto 20px;
+}
+.rating_value{
+    grid-column-start: 3;
+    margin: auto;
+}
+.profile_text input[type=text]{
+    font-size: inherit;
+    width: 150px;
+    outline: none;
+    text-align: center;
+    background-color: transparent;
+    border-color: transparent;
+    color: #fff;
+}
+.change_password_window_container{
+    font-size: 20px;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+.change_password_window{
+    cursor: pointer;
+    border-radius: 5px;
+    width: 400px;
+    max-width: 80%;
+    background-color: rgba(0,0,0, .4);
+    border: 2px solid rgba(80,80,80, .4);
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+.change_password_window_panel{
+    background-color: rgba(0,0,0, .6);
+    height: 30px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "name none close";
+}
+.inputs_container{
+    margin: auto;
+    padding: 10px;
+    width: 70%;
+    display: grid;
+}
+.image_container input{
+    width: 100%;
+}
+.change_password_window_panel_name{
+    grid-area: name;
+    margin: auto;
+    font-size: 15px;
+    padding: 10px;
+}
+.change_password_window_panel_close{
+    margin: auto;
+    grid-area: close;
+    background-color: transparent;
+    height: inherit;
+    aspect-ratio: 1/1;
+    display: flex;
+}
+.change_password_window_panel_close:hover{
+    background-color: rgba(100,0,0, .8);
+}
+.close_button{
+    display: block;
+    margin: auto;
+}
+
+@media only screen and (max-width:900px) {
+    .page_container{
+        width: 100%;
+        height: 100%;
+        grid-template-areas:
+         "info"
+         "statics"
+         "settings";
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+    }
+    .statics_container{
+        background-color: rgba(15,15,15,.6);
+    }
+}
